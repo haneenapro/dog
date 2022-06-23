@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" integrity="sha512-GQGU0fMMi238uA+a/bdWJfpUGKUkBdgfFdgBm72SUQ6BeyWjoY/ton0tEjH+OSH9iP4Dfh+7HM0I9f5eR0L/4w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor5/34.1.0/ckeditor.js" integrity="sha512-uekLDwCXz4l5hqTQulZyzVX++Ws8YaijlVlwAx+BDn3kV49Bo/qqz/xVcj+m/KXTjSybEiWPBatvdsi6N4yhfg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <section class="main-section">
+    <!--title-->
+    <div class="section-title">
+      <div> <h1> Task </h1> </div>
+      <div> <a href=""> <i class="fa-solid fa-xmark"></i> </a> </div>
+
+    </div>
+
+    <!--Body-->
+    <div class="section-body">
+      <!--title-->
+      <div class="form-grp">
+        <div class="label-title">
+          <label for="exampleInputTitle" class="form-label"> Title </label>
+        </div>
+        <div class="form-grp">
+            <input type="text" placeholder="Title">
+        </div>
+      </div>
+
+      <!--Selectors Section-->
+      <div class="form-grp">
+        <!--Select-->
+        <div class="form-row">
+            <div class="form-item">
+                <div class="sec-select">
+                    <div class="label-title">
+                      <label for="exampleInputQueue" class="form-label"> Select Queue </label>
+                    </div>
+                    <div> 
+                      <select class="label-input">
+                        <option value="0">Finance </option>
+                        <option value="1">Audi</option>
+                        <option value="2">BMW</option>
+                        <option value="3">Citroen</option>
+                        <option value="4">Ford</option>
+                      </select>
+                    </div>
+                  </div>
+            </div>
+
+            <div class="form-item">
+                <div class="sec-assign">
+                    <div>
+                      <label for="exampleInputAssign" class="form-label"> Assign to </label>
+                    </div>
+          
+                    <div>
+                      <select class="label-input">
+                        <option value="0">Ag. Alexa Harper </option>
+                        <option value="1">Audi</option>
+                        <option value="2">BMW</option>
+                        <option value="3">Citroen</option>
+                        <option value="4">Ford</option>
+                      </select>
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </div>
+
+
+       <!--Date and Time-->
+      <div class="form-grp">
+        <div class="form-row">
+            <div class="form-item">
+                <div class="sec-date">
+                    <div class="label-title"> 
+                      <label for="exampleInputDate" class="form-label"> Due date </label>
+                    </div>
+                    <div class="date-is-here">
+                      <input type="date" id="exampleInputDate" class="date-here" >
+                      
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="sec-time">
+                    <div class="label-title"> 
+                      <label for="exampleInputTime" class="form-label"> Time </label>
+                    </div>
+                    <div class="time-is-here">
+                      <input type="time" class="time-here">
+                    </div>
+                  </div>
+        
+            </div>
+
+            <div class="form-item">
+                  <div class="sec-reminder">
+                    <div class="label-title">
+                      <label for="exampleInputRe" class="form-label"> Set Reminder </label>
+                    </div>
+                    <div>
+                      <input type="reminder" class="reminder-here" placeholder="30 mins before ">
+                    </div>
+                  </div>
+            </div>
+        </div>
+      </div>
+
+      <!--Internal Notes-->
+      <div class="form-grp">
+        <div>
+          <label for="exampleInputInternalnotes" class="form-label"> Add internal note </label>
+        </div>
+
+        <div>
+            <form method="post"  >
+              <textarea id="editor" class="form-class" name="editor" placeholder="Start typing here..." >
+
+              </textarea>
+            </form>
+        </div>
+      </div>
+
+    </div>
+
+    <!--Buttons-->
+    <div class="section-buttons">
+      <div> <button type="button" class="btn btn-primary">Create task </button> </div>
+      <div> <button type="button" class="btn btn-light"> Cancel </button> </div>
+    </div>
+    </section>
+
+
+    <script src="../work1/ckeditor-there/ckeditor.js">  </script>
+
+    <script>
+        CKEDITOR.replace('editor');
+    </script>
+
+    <script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ),{
+            toolbar: [ 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'todoList',
+    '|', 'indent', 'outdent', '|', 'uploadImage', 'blockQuote', 'insertTable', 'insertVideo']
+        } )
+        .then( editor => {
+                console.log( editor );
+        } )
+        .catch( error => {
+                console.error( error );
+        } );
+
+        Array.from( editor.ui.componentFactory.names() );
+
+    </script>
+
+
+<script>
+Array.from( editor.ui.componentFactory.names() );
+
+</script>
+
+
+    
+
+  <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
+  <script src="https://cdn.ckeditor.com/[version.number]/[distribution]/ckeditor.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js" integrity="sha512-pax4MlgXjHEPfCwcJLQhigY7+N8rt6bVvWLFyUMuxShv170X53TRzGPmPkZmGBhk+jikR8WBM4yl7A9WMHHqvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../js/app.js"></script>
+ 
+</body>
+</html>
